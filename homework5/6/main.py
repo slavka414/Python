@@ -13,22 +13,12 @@
 
 text = open("text_6.txt", 'r', encoding="utf-8")
 dict = {}
-list = ()
 str = []
-n = 0
-k = 1
 
 for i in text:
     n = 0
-
-    # print(i)
-    # print(type(i))
+    a = 0
     list = i.split()                #убираем пробелы и записываем в строку
-    # print(list)
-    # print(type(list))
-    # str = i.split()
-    # print(str)
-    # print(type(str))
     while n < len(list):
         k = 1
         if list[n] == '-':          #вычисляем в каком элементе дефис
@@ -42,15 +32,17 @@ for i in text:
                 else:
                     break                           #где-то тут
             k += 1                                  #или тут надо конкатенировать
-            print(str)
+            # print(str)
+            if len(str) == 1:
+                str.insert(0, "0")
+            a = int(str[0] + str[1]) + a
+            dict.update({list[0]: a})
+            str.clear()
             continue
+    # print(list)
+    # print(type(list))
+print(dict)
 
-
-        str.clear()
-    print(list)
-    print(type(list))
-    # print(list[1])
-    # print(type(list[1]))
 
 
 
