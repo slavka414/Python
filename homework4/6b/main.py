@@ -17,5 +17,3 @@ for el in cycle(list):
         break
     print(el)
     с += 1
-
-
